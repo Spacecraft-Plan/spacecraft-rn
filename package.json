@@ -1,5 +1,5 @@
 {
-  "name": "root",
+  "name": "spacecraft-rn",
   "private": true,
   "workspaces": [
     "app",

@@ -4,7 +4,7 @@ import { Button, StyleSheet, Switch, Text, View, Image } from "react-native";
 import React, { useState } from "react";
 // import { NativeModules, Button } from "react-native";
 // import MyCustomView from './myviews';
-import RTNCalculator from '../compoents/NativeCalculator';
+import RTNCalculator from '@spacecraft/mycm/src/NativeCalculator';
 
 export default function HomeScreen({ navigation }) {
     const [isChecked, setisChecked] = useState(true);
@@ -23,7 +23,7 @@ export default function HomeScreen({ navigation }) {
   // const a = CalendarModule.createCalendarEvent("testName", "testLocation");
   // console.log("cjf We will invoke the native module here!  "+a);
 
-    
+
 
     return (
         <View style={styles.container}>

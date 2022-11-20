@@ -1,37 +1,29 @@
-package com.jamesfchen.spacecraftrn
+package com.mycm
 
 import com.facebook.react.ReactPackage
 import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.uimanager.ViewManager
-import java.util.*
-
-/**
- * Copyright ® $ 2017
- * All right reserved.
- *
- * @author: jamesfchen
- * @since: Sep/26/2022  Mon
- */
+import java.util.ArrayList
 
 /**
  * 老架构
  */
-class MyAppPackage : ReactPackage {
-    override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
-        val modules: MutableList<NativeModule> = ArrayList()
-        modules.add(CalendarModule(reactContext))
-        return modules
-    }
+class MycmViewPackage : ReactPackage {
 
-    override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
-        return listOf<ViewManager<*, *>>(
-            MyImageViewManager(
-                reactContext
-            )
-        )
-    }
+    override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
+          val modules: MutableList<NativeModule> = ArrayList()
+          modules.add(CalendarModule(reactContext))
+          return modules
+      }
+
+      override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
+         val viewManagers: MutableList<ViewManager<*, *>> = ArrayList()
+          viewManagers.add(MycmViewManager())
+          viewManagers.add(MyImageViewManager(reactContext))
+          return viewManagers
 }
+
 
 /**
  * 新架构

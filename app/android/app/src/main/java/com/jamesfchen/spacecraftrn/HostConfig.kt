@@ -40,7 +40,7 @@ class ReactNativeHost1(application: Application) : BaseReactNativeHost(applicati
         val packages: MutableList<ReactPackage> = PackageList(this).packages
         // Packages that cannot be autolinked yet can be added manually here, for example:
         // packages.add(new MyReactNativePackage());
-        packages.add(MyAppPackage())
+        //packages.add(MyAppPackage())
         return packages
     }
 }

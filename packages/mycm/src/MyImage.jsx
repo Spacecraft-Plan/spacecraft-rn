@@ -2,7 +2,7 @@ import { requireNativeComponent  } from "react-native";
 
 import React from "react";
 const MyImageView = requireNativeComponent("MyImageView");
-class MyCustomView extends React.Component {
+class MyImage extends React.Component {
   constructor(props) {
     super(props);
     this._onChange = this._onChange.bind(this);
@@ -17,4 +17,4 @@ class MyCustomView extends React.Component {
     return <MyImageView {...this.props} onChange={this._onChange} />;
   }
 }
-module.exports = MyCustomView;
+module.exports = MyImage;
