@@ -2,7 +2,7 @@
   "name": "spacecraft-rn",
   "private": true,
   "workspaces": [
-    "app",
+    "apps/*",
     "packages/*"
   ],
   "devDependencies": {
