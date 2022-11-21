@@ -1,8 +1,4 @@
-plugins {
-    id "com.android.application"
-//    id 'kotlin-android'
-    id("org.jetbrains.kotlin.android") version "1.6.0"
-}
+apply plugin: "com.android.application"
 
 import com.android.build.OutputFile
 import org.apache.tools.ant.taskdefs.condition.Os
@@ -147,11 +143,11 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        applicationId 'com.jamesfchen.spacecraftrn'
+        applicationId "com.spacecraftrn"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0.0"
+        versionName "1.0"
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
 
         if (isNewArchitectureEnabled()) {
@@ -343,7 +339,6 @@ dependencies {
     } else {
         implementation jscFlavor
     }
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 if (isNewArchitectureEnabled()) {

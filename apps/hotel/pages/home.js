@@ -4,7 +4,7 @@ import { Button, StyleSheet, Switch, Text, View, Image } from "react-native";
 import React, { useState } from "react";
 // import { NativeModules, Button } from "react-native";
 // import MyCustomView from './myviews';
-import RTNCalculator from '@spacecraft/mycm/src/NativeCalculator';
+// import RTNCalculator from '@spacecraft/mycm/src/NativeCalculator';
 
 export default function HomeScreen({ navigation }) {
     const [isChecked, setisChecked] = useState(true);
@@ -40,8 +40,8 @@ export default function HomeScreen({ navigation }) {
                 // setSound(sound);
                 // await sound.playAsync();
 
-                const value = await RTNCalculator.add(3, 7);
-                console.log(value)
+                // const value = await RTNCalculator.add(3, 7);
+                // console.log(value)
 
             }} />
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import MyReactNativeYueRenderer from '@spacecraft/myrenderer/lib/myReactNativeYueRenderer';
-import App from '@spacecraft/myrenderer/lib/App';
+import MyReactNativeYueRenderer from '@spacecraft/myrenderer/src/myReactNativeYueRenderer';
+import App from '@spacecraft/myrenderer/src/App';
 import gui from 'gui';
 
 const win = gui.Window.create({});

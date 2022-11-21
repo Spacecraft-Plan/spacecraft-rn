@@ -26,5 +26,13 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+    "codegenConfig": {
+      "name": "CalculatorSpec",
+      "type": "modules",
+      "jsSrcsDir": ".",
+      "android": {
+        "javaPackageName": "com.calculator"
+      }
+    }
 }
