@@ -77,11 +77,12 @@ import com.android.build.OutputFile
  * ]
  */
 
+def reactNativeRoot = new File(["node", "--print", "require.resolve('react-native/package.json')"].execute(null, rootDir).text.trim()).getParentFile().getAbsolutePath()
 project.ext.react = [
     enableHermes: true,  // clean and rebuild if changing
+    cliPath: "${reactNativeRoot}/cli.js",
 ]
-
-apply from: "../../node_modules/react-native/react.gradle"
+apply from: new File(reactNativeRoot, "react.gradle")
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -146,8 +147,8 @@ android {
             externalNativeBuild {
                 cmake {
                     arguments "-DPROJECT_BUILD_DIR=$buildDir",
-                        "-DREACT_ANDROID_DIR=$rootDir/../node_modules/react-native/ReactAndroid",
-                        "-DREACT_ANDROID_BUILD_DIR=$rootDir/../node_modules/react-native/ReactAndroid/build",
+                        "-DREACT_ANDROID_DIR=${reactNativeRoot}/ReactAndroid",
+                        "-DREACT_ANDROID_BUILD_DIR=${reactNativeRoot}/ReactAndroid/build",
                         "-DNODE_MODULES_DIR=$rootDir/../node_modules",
                         "-DANDROID_STL=c++_shared"
                 }
@@ -301,7 +302,8 @@ task copyDownloadableDepsToLibs(type: Copy) {
     into 'libs'
 }
 
-apply from: file("../../../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
+apply from: new File(["node", "--print", "require.resolve('@react-native-community/cli-platform-android/package.json')"].execute(null, rootDir).text.trim(), "../native_modules.gradle");
+applyNativeModulesAppBuildGradle(project)
 
 def isNewArchitectureEnabled() {
     // To opt-in for the New Architecture, you can either:

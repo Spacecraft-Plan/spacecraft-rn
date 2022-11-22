@@ -1,12 +1,14 @@
 {
   "name": "train",
   "version": "1.0.0",
-  "main": "node_modules/expo/AppEntry.js",
+  "main": "index.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "bundle:and":"react-native bundle --entry-file index.js --platform android --dev false --bundle-output ./dist/android/app/src/main/assets/index.android.bundle --assets-dest .dist/android/app/src/main/res/",
+    "bundle":"expo export --dump-sourcemap"
   },
   "dependencies": {
     "expo": "~47.0.6",

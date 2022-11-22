@@ -1,13 +1,16 @@
 {
   "name": "hotel",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "main": "index.js",
   "scripts": {
-    "start-yue": "./node_modules/.bin/babel-node --presets react index.yue.js",
-    "start-web": "./node_modules/.bin/babel-node --presets react index.web1.js",
+    "start:yue": "./node_modules/.bin/babel-node --presets react index.yue.js",
+    "start:web": "./node_modules/.bin/babel-node --presets react index.web1.js",
     "start": "expo start --dev-client",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "bundle:and":"react-native bundle --entry-file index.js --platform android --dev false --bundle-output ./android/app/src/main/assets/index.android.bundle --assets-dest ./android/app/src/main/res/",
+    "bundle":"expo export --dump-sourcemap"
   },
   "dependencies": {
     "@react-native-community/slider": "4.2.4",
@@ -33,6 +36,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
+    "@babel/runtime": "^7.12.5",
     "babel-cli": "6.26.0",
     "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-preset-env": "1.7.0",
