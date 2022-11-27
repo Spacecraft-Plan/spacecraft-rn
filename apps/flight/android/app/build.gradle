@@ -1,7 +1,5 @@
-apply plugin: "com.android.application"
-
-
 import com.android.build.OutputFile
+apply plugin: "com.android.application"
 /**
  * The react.gradle file registers a task for each build variant (e.g. bundleDebugJsAndAssets
  * and bundleReleaseJsAndAssets).
@@ -78,9 +76,12 @@ import com.android.build.OutputFile
  */
 
 def reactNativeRoot = new File(["node", "--print", "require.resolve('react-native/package.json')"].execute(null, rootDir).text.trim()).getParentFile().getAbsolutePath()
+def reactNativeCodeGenRoot = new File(["node", "--print", "require.resolve('react-native-codegen/package.json')"].execute(null, rootDir).text.trim()).getParentFile().getAbsolutePath()
 project.ext.react = [
-    enableHermes: true,  // clean and rebuild if changing
-    cliPath: "${reactNativeRoot}/cli.js",
+        reactNativeDir : reactNativeRoot,
+        enableHermes: true,  // clean and rebuild if changing
+        cliPath     : "${reactNativeRoot}/cli.js",
+        codegenDir:reactNativeCodeGenRoot
 ]
 apply from: new File(reactNativeRoot, "react.gradle")
 
@@ -149,7 +150,7 @@ android {
                     arguments "-DPROJECT_BUILD_DIR=$buildDir",
                         "-DREACT_ANDROID_DIR=${reactNativeRoot}/ReactAndroid",
                         "-DREACT_ANDROID_BUILD_DIR=${reactNativeRoot}/ReactAndroid/build",
-                        "-DNODE_MODULES_DIR=$rootDir/../node_modules",
+                        "-DNODE_MODULES_DIR=$reactNativeRoot/../node_modules",
                         "-DANDROID_STL=c++_shared"
                 }
             }
