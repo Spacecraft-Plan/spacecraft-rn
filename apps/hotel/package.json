@@ -3,8 +3,6 @@
   "version": "1.1.0",
   "main": "index.js",
   "scripts": {
-    "start:yue": "./node_modules/.bin/babel-node --presets react index.yue.js",
-    "start:web": "./node_modules/.bin/babel-node --presets react index.web1.js",
     "start": "expo start --dev-client",
     "android": "expo run:android",
     "ios": "expo run:ios",
