@@ -1,50 +1,34 @@
-# Welcome to your Expo app 👋
+# 高效开发、高质量交付
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## 1.代码设计(code design)
 
-## Get started
+[CODEDESIGN](https://big-frontend.github.io/spacecraft-android/docs/CODEDESIGN.md)
 
-1. Install dependencies
+## 2.开发(coding)
 
-   ```bash
-   npm install
-   ```
+- mock平台:mitmproxy
+- 清晰的分包结构与代码高可复用：util、widget
 
-2. Start the app
+## 3.代码评审(code review)
 
-   ```bash
-    npx expo start
-   ```
+### 质量扫描 、安全扫描(源代码、第三方组件) 、开源合规
 
-In the output, you'll find options to open the app in a
+- 质量扫描
+    - 代码静态分析
+    - Android Style
+    - Kotlin Style
+  
+- 安全扫描
+    - 风险代码 
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### 测试
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- 覆盖率测试：[Android增量代码测试覆盖率工具](https://tech.meituan.com/2017/06/16/android-jacoco-practace.html)、JaCoCo
+- 自动化测试：单元测试、集成测试等，[自动化测试在美团外卖的实践与落地](https://tech.meituan.com/2022/09/15/automated-testing-in-meituan.html)
 
-## Get a fresh project
+## 4.部署 & 渠道
 
-When you're ready, run:
+- [蒲公英分发](https://www.pgyer.com/manager/dashboard/app/747e76f865ef67134972fc6e54b7edbd)
+- [firebase app distribution](https://console.firebase.google.com/project/spacecraft-22dc1/appdistribution/app/android:com.electrolytej.pisces/releases?hl=zh-cn)
 
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 5.性能与稳定性监控
