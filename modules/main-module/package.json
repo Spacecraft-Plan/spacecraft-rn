@@ -1,1 +1,11 @@
-{}
+{
+  "name": "main-module",
+  "version": "1.0.0",
+  "description": "npx create-expo-module@latest --local && npx expo prebuild --clean",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
