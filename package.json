@@ -11,6 +11,11 @@
     "test": "jest --watchAll",
     "lint": "expo lint"
   },
+  "workspaces": [
+    "modules/*",
+    "base",
+    "app"
+  ],
   "jest": {
     "preset": "jest-expo"
   },
