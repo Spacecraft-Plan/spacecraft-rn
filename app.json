@@ -36,6 +36,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "d594ecac-645f-457a-b547-fd374e1337b8"
+      }
+    },
+    "owner": "ectrolytej"
   }
 }

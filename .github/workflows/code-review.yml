@@ -22,3 +22,6 @@ jobs:
         run: yarn install
       - name: Build on EAS
         run: eas build --platform all --non-interactive --no-wait
+
+
+
